@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{position: relative;}
+        .thisBtn{position: absolute; right: 10px; top: 10px; padding: 0.5em 3em; background-color: royalblue; color: #fff; border-radius: 20px;}
+        .showBox{position: absolute; right: 0; top: 50px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3); padding: 2em; display: none; animation: on 0.3s ease-in-out;
+        }
+        
+        @keyframes on {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+        .showBox.on{display: flex; flex-direction: column;}
+        .showBox a{display:inline-block; padding: 0.5em 3em; background-color: salmon; color: #fff; border-radius: 20px; margin-bottom: 3%; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <a class="thisBtn" href="#">click</a>
+        <div class="showBox">
+            <a class="sns" href="http://naver.com" target="_blank">facebook</a>
+            <a class="sns" href="http://naver.com" target="_blank">instagram</a>
+            <a class="sns" href="http://naver.com" target="_blank">blog</a>
+        </div>
+    </div>
+    <script>
+        const thisBtn = document.querySelector('.thisBtn');
+        const showBox = document.querySelector('.showBox');
+        const sns = document.querySelectorAll('.sns');
+        
+        document.addEventListener('click', function(e) {
+            // e.preventDefault();
+            if(e.target.classList.contains("thisBtn")) {
+                showBox.classList.toggle("on");
+            } else if(e.target.classList.contains("showBox") || e.target.classList.contains("sns")) {
+                return 
+            } else {
+                if(showBox.classList.contains("on")) {
+                    showBox.classList.remove("on");
+                }
+            }
+        })
+    </script>
+</body>
+</html>
