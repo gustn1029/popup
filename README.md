@@ -20,8 +20,16 @@
 
 ```css
         .wrap{position: relative;}
-        .thisBtn{position: absolute; right: 10px; top: 10px; padding: 0.5em 3em; background-color: royalblue; color: #fff; border-radius: 20px;}
-        .showBox{position: absolute; right: 0; top: 50px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3); padding: 2em; display: none; animation: on 0.3s ease-in-out;
+        .thisBtn{padding: 0.5em 3em; 
+        background-color: royalblue; 
+        color: #fff; 
+        border-radius: 20px;
+        position: absolute; right: 10px; top: 10px; 
+        }
+        .showBox{padding: 2em; display: none;
+        position: absolute; right: 0; top: 50px; 
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3); 
+        animation: on 0.3s ease-in-out;
         }
         
         @keyframes on {
@@ -29,7 +37,11 @@
                 to {opacity: 1;}
             }
         .showBox.on{display: flex; flex-direction: column;}
-        .showBox a{display:inline-block; padding: 0.5em 3em; background-color: salmon; color: #fff; border-radius: 20px; margin-bottom: 3%; text-align: center;}
+        .showBox a{display:inline-block; padding: 0.5em 3em;  margin-bottom: 3%;
+        background-color: salmon; color: #fff;
+         border-radius: 20px; 
+         text-align: center;
+         }
 ```
 css는 일단 버튼을 눈에 뜨게 만들기 위해서 `background-color` 를 사용하였고,  
 팝업레이어 또한 `box-shadow` 를 적용하여 배경과 분간이 되도록 만들었습니다.  
@@ -79,4 +91,7 @@ document.addEventListener('click', function(e) {
         })
 ```
 그리고 `document.addEventListener` 클릭 이벤트를 통해서 실행이 되도록 만들었습니다.  
-먼저 클릭을 했을 때 `if`를 사용하여 클릭 된 타깃의 `classList.contains` 를 활용하여 각각의 태그들을 
+먼저 클릭을 했을 때 `if`를 사용하여 클릭 된 타깃의 `classList.contains` 를 활용하여 각각의 태그들을 제어했습니다.  
+`thisBtn` 은 클릭했을 때 `toggle` 을 활용하여 on 을 클래스에 추가 제거가 가능하게 만들었고,  
+`showBox || sns` 를 클릭했을 때는 아무런 이벤트도 일어나지 않도록 하고, `sns` 를 통하여 원하는 경로로 이동할 수 있도록 만들었습니다.
+그리고 그 외에는 `showBox.classList.contains("on")` 일 때 `on` 을 제거해주도록 만들어서 팝업레이어를 제외한 다른 영역을 클릭했을 때는 팝업레이어가 사라지도록 만들었습니다.
