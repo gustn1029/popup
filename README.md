@@ -21,15 +21,15 @@
 ```css
         .wrap{position: relative;}
         .thisBtn{padding: 0.5em 3em; 
-        background-color: royalblue; 
-        color: #fff; 
-        border-radius: 20px;
-        position: absolute; right: 10px; top: 10px; 
+                    background-color: royalblue; 
+                    color: #fff; 
+                    border-radius: 20px;
+                    position: absolute; right: 10px; top: 10px; 
         }
         .showBox{padding: 2em; display: none;
-        position: absolute; right: 0; top: 50px; 
-        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3); 
-        animation: on 0.3s ease-in-out;
+                    position: absolute; right: 0; top: 50px; 
+                    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3); 
+                    animation: on 0.3s ease-in-out;
         }
         
         @keyframes on {
@@ -38,9 +38,9 @@
             }
         .showBox.on{display: flex; flex-direction: column;}
         .showBox a{display:inline-block; padding: 0.5em 3em;  margin-bottom: 3%;
-        background-color: salmon; color: #fff;
-         border-radius: 20px; 
-         text-align: center;
+                    background-color: salmon; color: #fff;
+                    border-radius: 20px; 
+                    text-align: center;
          }
 ```
 css는 일단 버튼을 눈에 뜨게 만들기 위해서 `background-color` 를 사용하였고,  
